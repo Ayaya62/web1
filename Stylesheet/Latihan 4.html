@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Belajar PW-CSS   </title>
+        <style type="text/css">
+            img.x1{
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 1;
+            }
+            img.x2{
+                position: absolute;
+                left: 0;
+                top: 100;
+                z-index: -1;   
+            }
+        </style>
+    </head>
+    <body>
+        <p><b>Catatan:</b> Browserjadul tidak support properti "z-index".</p>
+        <h1>Sepertinya Heading ini terhalang oleh gambar</h1>
+        <img class="x1" src="../Form/kamisato-ayaka.gif" width="100px" height="100px">
+        <p>
+            Nilai default z-index adalah 0. Zindex 1 memiliki prioritas lebih tinggi,
+            sedangkan z-index -1  memiliki prioritas lebih rendah.  
+        </p> 
+        <br><br><br>
+        <img class="x2" src="../Form/kamisato-ayaka.gif" width="200px" height="200px">
+        <p>
+            Sekarang tampilan bisa dibandingkan. Apakah masih terhalang gambar?
+        </p>
+    </body>
+</html>

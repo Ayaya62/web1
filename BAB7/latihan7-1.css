@@ -1,0 +1,5 @@
+.positioned{
+    position: static;
+    background: yellow;
+    position: relative;
+}

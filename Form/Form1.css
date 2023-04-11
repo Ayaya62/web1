@@ -5,10 +5,9 @@ body{
 fieldset{
     border: 2px solid;
     width: 100px;
-    margin: 10px;
     text-align: center;
     background-color: rgb(248, 235, 160);
-    margin: auto;
+    margin:auto;
 }
 legend{
     background-color: rgb(44, 40, 40);

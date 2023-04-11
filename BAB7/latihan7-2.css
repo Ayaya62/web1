@@ -1,0 +1,15 @@
+.positioned{
+    position: static;
+    background: yellow;
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+
+.positioned2{
+    position: static;
+    background: yellow;
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
