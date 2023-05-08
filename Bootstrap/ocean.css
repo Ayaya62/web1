@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.heading{
+    padding-top: 7rem;
+    background-color: #00E7FF;
+    height: 85vh;
+}
