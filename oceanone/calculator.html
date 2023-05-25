@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Consume Calculator</title>
+    <link href="calculator.css"></link>
+    <script>
+      function calculateYearSum(inputElement, yearSumElement, multiplyFactor) {
+        var row = inputElement.parentNode.parentNode; // Get the parent row element
+        var quantity = parseInt(inputElement.value);
+        if (!isNaN(quantity)) {
+          var yearSum = quantity * multiplyFactor;
+          yearSumElement.textContent = yearSum;
+          updateTotal(row.parentNode);
+        } else {
+          yearSumElement.textContent = "";
+          updateTotal(row.parentNode);
+        }
+      }
+
+      function updateTotal(table) {
+        var rows = table.getElementsByClassName("data-row");
+        var total = 0;
+        for (var i = 0; i < rows.length; i++) {
+          var yearSumElement = rows[i].querySelector(".yearSum");
+          var yearSumText = yearSumElement.textContent;
+          if (yearSumText !== "") {
+            total += parseInt(yearSumText);
+          }
+        }
+        table.querySelector(".total").textContent = total;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>ITEMS YOU CONSUME DAILY</h1>
+    <h3>Please enter the quantity for each day:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>DAY</th>
+          <th>YEAR</th>
+        </tr>
+      </thead>
+      <tbody id="consumeTable">
+        <tr class="data-row">
+          <td>Plastic Bottles</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum1'), 365)" />
+          </td>
+          <td id="yearSum1" class="yearSum"></td>
+        </tr>
+        <tr class="data-row">
+          <td>Plastic Cups</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum2'), 365)" />
+          </td>
+          <td id="yearSum2" class="yearSum"></td>
+        </tr>
+        <tr class="data-row">
+          <td>Straws</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum3'), 365)" />
+          </td>
+          <td id="yearSum3" class="yearSum"></td>
+        </tr>
+        <tr class="data-row">
+          <td>Cotton Swabs</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum4'), 365)" />
+          </td>
+          <td id="yearSum4" class="yearSum"></td>
+        </tr>
+        <tr class="data-row">
+          <td>Cigarette Butts</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum5'), 365)" />
+          </td>
+          <td id="yearSum5" class="yearSum"></td>
+        </tr>
+        <tr class="data-row">
+          <td>Plastic Resealable Bags</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum6'), 365)" />
+          </td>
+          <td id="yearSum6" class="yearSum"></td>
+        </tr>
+        <tr class="data-row">
+          <td>Plastic Resealable Bags</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum7'), 365)" />
+          </td>
+          <td id="yearSum7" class="yearSum"></td>
+        </tr>
+        <tr class="data-row">
+          <td>Plastic Resealable Bags</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum8'), 365)" />
+          </td>
+          <td id="yearSum8" class="yearSum"></td>
+        </tr>
+        <tr class="data-row">
+          <td>Plastic Resealable Bags</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum9'), 365)" />
+          </td>
+          <td id="yearSum9" class="yearSum"></td>
+        </tr>
+        <tr class="data-row">
+          <td>Plastic Resealable Bags</td>
+          <td>
+            <input type="text" oninput="calculateYearSum(this, document.getElementById('yearSum10'), 365)" />
+          </td>
+          <td id="yearSum10" class="yearSum"></td>
+        </tr>
+        <tr>
+          <td>Total Consumption:</td>
+          <td></td>
+          <td class="total"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      // Calculate the initial total when the page loads
+      updateTotal(document.getElementById("consumeTable"));
+    </script>
+  </body>
+</html>

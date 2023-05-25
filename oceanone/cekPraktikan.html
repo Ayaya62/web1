@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Praktikan PPW1B1</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <script>
+    // Menanyakan apakah pengguna adalah praktikan PPW1
+    var isPraktikan = confirm("Apakah anda praktikan PPW1B1?");
+
+    if (isPraktikan) {
+      // Meminta input nama
+      var nama = prompt("Masukkan nama:");
+
+      // Meminta input NIM
+      var nim = prompt("Masukkan NIM:");
+
+      // Meminta input angkatan
+      var angkatan = prompt("Masukkan angkatan:");
+
+      // Membuat tabel menggunakan Bootstrap
+      var table = `
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>NIM</th>
+              <th>Angkatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>${nama}</td>
+              <td>${nim}</td>
+              <td>${angkatan}</td>
+            </tr>
+          </tbody>
+        </table>
+      `;
+
+      document.write(table);
+    } else {
+      document.write("Anda bukan praktikan PPW1B1, anda tidak boleh masuk!");
+    }
+  </script>
+
+</body>
+</html>
